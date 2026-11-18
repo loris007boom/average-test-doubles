@@ -1,8 +1,8 @@
-import { FileAccess } from "./file_access.ts";
+import type { NumberReader } from "./number_reader.ts";
 import { mean, median, mode } from "./statistics.ts";
 
 export class Average {
-  constructor(private fileAccess: FileAccess) {}
+  constructor(private fileAccess: NumberReader) {}
 
   public async computeMeanOfFile(): Promise<number> {
     const numbers: Array<number> = await this.fileAccess.readNumbers();

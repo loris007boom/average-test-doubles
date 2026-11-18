@@ -1,4 +1,6 @@
-export class FileAccess {
+import type { NumberReader } from "./number_reader.ts";
+
+export class FileAccess implements NumberReader {
   constructor(private path: string) {}
 
   public async readNumbers(): Promise<Array<number>> {
